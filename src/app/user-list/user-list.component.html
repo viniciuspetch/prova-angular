@@ -3,29 +3,33 @@
     <mat-card-title>
         {{user.name}}
     </mat-card-title>
-    <mat-card-content>
-        <div>
+    <mat-list>
+        <mat-list-item>
             CPF: {{user.cpf}}
-        </div>
+        </mat-list-item>
         <mat-divider></mat-divider>
-        <div>
+        <mat-list-item>
             Telefone: {{user.phone}}
-        </div>
+        </mat-list-item>
         <mat-divider></mat-divider>
-        <div>
+        <mat-list-item>
             E-mail: {{user.email}}
-        </div>
+        </mat-list-item>
         <mat-divider></mat-divider>
-        <div>
+        <mat-list-item>
             CEP: {{user.cep}}
-        </div>
+        </mat-list-item>
         <mat-divider></mat-divider>
-        <div>
+        <mat-list-item>
             Cidade: {{user.city}} - {{user.state}}
-        </div>
+        </mat-list-item>
         <mat-divider></mat-divider>
-        <div>
+        <mat-list-item>
             Rua: {{user.street}}
-        </div>
-    </mat-card-content>
+        </mat-list-item>
+    </mat-list>
+    <mat-card-actions>
+        <button>Edit</button>
+        <button>Delete</button>
+    </mat-card-actions>
 </mat-card>

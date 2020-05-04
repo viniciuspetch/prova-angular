@@ -21,7 +21,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
-
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
 	declarations: [
@@ -44,6 +44,7 @@ import { MatDividerModule } from '@angular/material/divider';
 		MatButtonModule,
 		MatCardModule,
 		MatDividerModule,
+		MatListModule,
 	],
 	providers: [CepService],
 	bootstrap: [AppComponent]
