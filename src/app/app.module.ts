@@ -13,7 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { OrigComponent } from './orig/orig.component';
 import { IndexComponent } from './index/index.component';
 import { UserListComponent } from './user-list/user-list.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 import { RouterModule } from '@angular/router'
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -33,10 +33,10 @@ import { MatInputModule } from '@angular/material/input';
 		OrigComponent,
 		IndexComponent,
 		UserListComponent,
-		EditUserComponent
+		UserFormComponent
 	],
 	imports: [
-		RouterModule.forRoot([{ path: "", component: IndexComponent }, { path: 'orig', component: OrigComponent }, { path: 'userlist', component: UserListComponent }, { path: "edituser", component: EditUserComponent }]),
+		RouterModule.forRoot([{ path: "", component: IndexComponent }, { path: 'orig', component: OrigComponent }, { path: 'userlist', component: UserListComponent }, { path: "userform", component: UserFormComponent }]),
 		BrowserModule,
 		BrowserAnimationsModule,
 		FormsModule,

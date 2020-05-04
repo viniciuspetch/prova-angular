@@ -4,11 +4,11 @@ import { UsersService } from '../users.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-edit-user',
-  templateUrl: './edit-user.component.html',
-  styleUrls: ['./edit-user.component.scss']
+  selector: 'app-user-form',
+  templateUrl: './user-form.component.html',
+  styleUrls: ['./user-form.component.scss']
 })
-export class EditUserComponent implements OnInit {
+export class UserFormComponent implements OnInit {
   user
   constructor(private router: Router, public cep: CepService, public usersService: UsersService) { }
 
