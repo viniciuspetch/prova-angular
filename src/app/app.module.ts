@@ -11,14 +11,17 @@ import { CepService } from './cep.service';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { OrigComponent } from './orig/orig.component';
+import { IndexComponent } from './index/index.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 import { RouterModule } from '@angular/router'
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { OrigComponent } from './orig/orig.component';
-import { IndexComponent } from './index/index.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 @NgModule({
 	declarations: [
@@ -39,6 +42,8 @@ import { UserListComponent } from './user-list/user-list.component';
 		HttpClientModule,
 		MatToolbarModule,
 		MatButtonModule,
+		MatCardModule,
+		MatDividerModule,
 	],
 	providers: [CepService],
 	bootstrap: [AppComponent]
