@@ -52,17 +52,29 @@ export class UsersService {
     this.currUser = { name: "", cpf: "", phone: "", email: "", cep: "", state: "", city: "", street: "" }
   }
 
+  searchUser(user) {
+    return this.users.findIndex(listUser => Number(listUser.cpf) == Number(user.cpf))
+  }
+
   saveEditedUser(newUser) {
-    console.log(this.users)
-    var index = this.users.findIndex(user => Number(user.cpf) == Number(newUser.cpf))
-    console.log(index)
-    console.log(newUser.cpf)
+    var index = this.searchUser(newUser)
     if (index == -1) {
       this.users.push(newUser)
     }
     else {
       this.users[index] = newUser
     }
+  }
+
+  deleteUser(user) {
+    var index = this.searchUser(user)
+    if (index != -1) {
+      this.users.splice(index, 1)
+    }
+  }
+
+  createUser(newUser) {
+
   }
 
   constructor() {

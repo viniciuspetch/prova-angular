@@ -21,7 +21,7 @@ export class UserListComponent implements OnInit {
     this.router.navigate(['userform'])
   }
 
-  deleteUser() {
-    console.log("delete")
+  deleteUser(currUser) {
+    this.usersService.deleteUser(currUser)
   }
 }
