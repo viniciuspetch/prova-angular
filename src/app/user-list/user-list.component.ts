@@ -14,11 +14,10 @@ export class UserListComponent implements OnInit {
     this.users = usersService.users
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  editUser() {
-    console.log("edit")
+  editUser(currUser) {
+    this.usersService.currUser = currUser
     this.router.navigate(['edituser'])
   }
 

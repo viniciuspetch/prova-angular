@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UsersService {
+  currUser
   users = [
     {
       name: 'Maria Flores',
@@ -47,7 +48,24 @@ export class UsersService {
     }
   ]
 
-  constructor() { }
+  resetCurrUser() {
+    this.currUser = { name: "", cpf: "", phone: "", email: "", cep: "", state: "", city: "", street: "" }
+  }
 
+  saveEditedUser(newUser) {
+    console.log(this.users)
+    var index = this.users.findIndex(user => Number(user.cpf) == Number(newUser.cpf))
+    console.log(index)
+    console.log(newUser.cpf)
+    if (index == -1) {
+      this.users.push(newUser)
+    }
+    else {
+      this.users[index] = newUser
+    }
+  }
 
+  constructor() {
+    this.resetCurrUser()
+  }
 }
