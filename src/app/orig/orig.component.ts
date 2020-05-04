@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CepService } from '../cep.service';
 
 @Component({
-  selector: 'app-orig',
-  templateUrl: './orig.component.html',
-  styleUrls: ['./orig.component.scss']
+	selector: 'app-orig',
+	templateUrl: './orig.component.html',
+	styleUrls: ['./orig.component.scss']
 })
 export class OrigComponent implements OnInit {
 
-  title = 'teste-helpper'
+	title = 'teste-helpper'
 
 	persons = [
 		{

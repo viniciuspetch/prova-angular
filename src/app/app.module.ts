@@ -18,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { OrigComponent } from './orig/orig.component';
 import { IndexComponent } from './index/index.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
 	declarations: [
@@ -25,10 +26,11 @@ import { IndexComponent } from './index/index.component';
 		HeaderComponent,
 		FooterComponent,
 		OrigComponent,
-		IndexComponent
+		IndexComponent,
+		UserListComponent
 	],
 	imports: [
-		RouterModule.forRoot([{path:"", component: IndexComponent}, { path: 'orig', component: OrigComponent }]),
+		RouterModule.forRoot([{ path: "", component: IndexComponent }, { path: 'orig', component: OrigComponent }, { path: 'userlist', component: UserListComponent }]),
 		BrowserModule,
 		BrowserAnimationsModule,
 		FormsModule,
