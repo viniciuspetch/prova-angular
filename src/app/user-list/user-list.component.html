@@ -27,9 +27,13 @@
         <mat-list-item>
             Rua: {{user.street}}
         </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <mat-card-actions class="user-actions">
+                <button mat-raised-button (click)="editUser()">Editar</button>
+                <button mat-raised-button (click)="deleteUser()">Deletar</button>
+            </mat-card-actions>
+        </mat-list-item>
     </mat-list>
-    <mat-card-actions>
-        <button>Edit</button>
-        <button>Delete</button>
-    </mat-card-actions>
+
 </mat-card>
