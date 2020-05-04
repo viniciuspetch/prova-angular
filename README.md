@@ -1,6 +1,6 @@
 # Prova de Angular
 
-Trata-se de um teste bem simples, onde temos um CRUD de usuários e queremos vê-lo funcional e organizado
+Trata-se de um teste bem simples, onde temos um CRUD de usuários e queremos vê-lo funcional, organizado e com testes
 
 ## O que será avaliado?
 
