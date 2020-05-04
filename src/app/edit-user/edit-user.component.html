@@ -1,0 +1,36 @@
+<form (ngSubmit)="formSubmit()">
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="user.name" type="text" name="name" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>CPF</mat-label>
+        <input matInput maxlength="11" [(ngModel)]="user.cpf" type="number" name="cpf" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Telefone</mat-label>
+        <input matInput [(ngModel)]="user.phone" type="number" name="phone" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput [(ngModel)]="user.email" type="text" name="email" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>CEP</mat-label>
+        <input matInput [(ngModel)]="user.cep" type="number" (keyup)="changeCep($event)" name="cep" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Estado</mat-label>
+        <input matInput maxlength="2" [(ngModel)]="user.state" type="text" name="state" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Cidade</mat-label>
+        <input matInput [(ngModel)]="user.city" type="text" name="city" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Rua</mat-label>
+        <input matInput [(ngModel)]="user.street" type="text" name="street" required>
+    </mat-form-field><br>
+    <button (click)="formCancel()">Descartar alterações</button>
+    <button>Salvar alterações</button>
+</form>
