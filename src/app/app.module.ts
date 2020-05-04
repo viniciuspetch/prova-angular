@@ -8,10 +8,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { CepService } from './cep.service';
+import { HeaderComponent } from './header/header.component';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
+		HeaderComponent,
+		FooterComponent
 	],
 	imports: [
 		BrowserModule,
@@ -20,6 +27,8 @@ import { CepService } from './cep.service';
 		MatTableModule,
 		MatInputModule,
 		HttpClientModule,
+		MatToolbarModule,
+		MatButtonModule,
 	],
 	providers: [CepService],
 	bootstrap: [AppComponent]
