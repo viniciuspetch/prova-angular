@@ -1,16 +1,16 @@
-<mat-toolbar color="primary">
-    <button mat-button routerLink="/" class="header-logo">
+<mat-toolbar class="header" color="primary">
+    <button mat-stroked-button routerLink="/" class="header-logo">
         <h1>
             CRUD
         </h1>
     </button>    
-    <button mat-button routerLink="/userlist">
+    <button mat-stroked-button routerLink="/userlist">
         Lista de usuários
     </button>
-    <button mat-button (click)='newUser()'>
+    <button mat-stroked-button (click)='newUser()'>
         Criar novo usuário
     </button>
-    <button mat-button routerLink="/orig">
+    <button mat-stroked-button routerLink="/orig">
         Versão original
     </button>
 </mat-toolbar>
