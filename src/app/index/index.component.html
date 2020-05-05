@@ -1,1 +1,17 @@
-<p>index works!</p>
+<mat-list>
+    <mat-list-item>
+        <button mat-stroked-button routerLink="/userlist">
+            Lista dos usuários cadastrados
+        </button>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-stroked-button (click)='newUser()'>
+            Criar um novo usuário
+        </button>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-stroked-button routerLink="/orig">
+            Ver a versão original do CRUD
+        </button>
+    </mat-list-item>
+</mat-list>
