@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { CepService } from './cep.service';
@@ -24,6 +25,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table'
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from "@angular/material";
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
 	declarations: [
@@ -33,7 +36,8 @@ import { MatInputModule } from '@angular/material/input';
 		OrigComponent,
 		IndexComponent,
 		UserListComponent,
-		UserFormComponent
+		UserFormComponent,
+		ConfirmationDialogComponent
 	],
 	imports: [
 		RouterModule.forRoot([{ path: "", component: IndexComponent }, { path: 'orig', component: OrigComponent }, { path: 'userlist', component: UserListComponent }, { path: "edituser", component: UserFormComponent }, { path: "newuser", component: UserFormComponent }]),
@@ -49,8 +53,10 @@ import { MatInputModule } from '@angular/material/input';
 		MatDividerModule,
 		MatListModule,
 		MatFormFieldModule,
+		MatDialogModule
 	],
 	providers: [CepService],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
+	entryComponents: [ConfirmationDialogComponent]
 })
 export class AppModule { }

@@ -42,6 +42,6 @@
         <mat-label>Rua</mat-label>
         <input matInput [(ngModel)]="user.street" type="text" name="street" required placeholder="Ex. Rua nº7">
     </mat-form-field><br>
-    <button mat-raised-button color="warn" (click)="formCancel()">Descartar alterações</button>
+    <button type="button" mat-raised-button color="warn" (click)="openDialog()">Descartar alterações</button>
     <button type="submit" [disabled]="!userForm.form.valid" mat-raised-button color="primary">Salvar alterações</button>
 </form>

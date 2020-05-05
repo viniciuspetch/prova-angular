@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CepService } from '../cep.service';
 import { UsersService } from '../users.service';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material";
+import { ConfirmationDialogComponent } from "../confirmation-dialog/confirmation-dialog.component";
 
 @Component({
   selector: 'app-user-form',
@@ -10,10 +12,10 @@ import { Router } from '@angular/router';
 })
 export class UserFormComponent implements OnInit {
   user
-  constructor(private router: Router, public cep: CepService, public usersService: UsersService) { }
+  constructor(private dialog: MatDialog, private router: Router, public cep: CepService, public usersService: UsersService) { }
 
   ngOnInit() {
-    this.user = {...this.usersService.currUser}
+    this.user = { ...this.usersService.currUser }
   }
 
   formSubmit() {
@@ -42,5 +44,21 @@ export class UserFormComponent implements OnInit {
         console.error(error)
       })
     }
+  }
+
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = {
+      message: "Você deseja cancelar as alterações?"
+    }
+    var dialogRef = this.dialog.open(ConfirmationDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+      data => {
+        if (data) {
+          this.router.navigate(['userlist'])
+        }
+      }
+    )
   }
 }
