@@ -56,7 +56,7 @@ export class UsersService {
     return this.users.findIndex(listUser => Number(listUser.cpf) == Number(user.cpf))
   }
 
-  saveEditedUser(newUser) {
+  saveUser(newUser) {
     var index = this.searchUser(newUser)
     if (index == -1) {
       this.users.push(newUser)
@@ -71,10 +71,6 @@ export class UsersService {
     if (index != -1) {
       this.users.splice(index, 1)
     }
-  }
-
-  createUser(newUser) {
-
   }
 
   constructor() {

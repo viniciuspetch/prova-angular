@@ -17,8 +17,7 @@ export class UserFormComponent implements OnInit {
   }
 
   formSubmit() {
-    console.log("submit")
-    this.usersService.saveEditedUser(this.user);
+    this.usersService.saveUser(this.user);
     this.router.navigate(['userlist'])
   }
 
