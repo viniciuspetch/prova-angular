@@ -24,4 +24,8 @@ export class UserListComponent implements OnInit {
   deleteUser(currUser) {
     this.usersService.deleteUser(currUser)
   }
+
+  searchUsers(event) {
+    this.users = this.usersService.users.filter(user => user.name.toLowerCase().includes(event.target.value.toLowerCase()))
+  }
 }
