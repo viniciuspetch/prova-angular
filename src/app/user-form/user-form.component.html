@@ -31,6 +31,6 @@
         <mat-label>Rua</mat-label>
         <input matInput [(ngModel)]="user.street" type="text" name="street" required>
     </mat-form-field><br>
-    <button (click)="formCancel()">Descartar alterações</button>
-    <button>Salvar alterações</button>
+    <button mat-raised-button color="warn" (click)="formCancel()">Descartar alterações</button>
+    <button mat-raised-button color="primary">Salvar alterações</button>
 </form>
