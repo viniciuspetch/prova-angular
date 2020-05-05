@@ -1,35 +1,37 @@
 <form class="user-form" (ngSubmit)="formSubmit()">
     <mat-form-field appearance="outline">
         <mat-label>Nome</mat-label>
-        <input matInput [(ngModel)]="user.name" type="text" name="name" required>
+        <input matInput [(ngModel)]="user.name" type="text" id="name" name="name" #name="ngModel" required placeholder="Ex. José Pedro dos Santos">
+        <div *ngIf="name.invalid">
+        </div>
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>CPF</mat-label>
-        <input matInput maxlength="11" [(ngModel)]="user.cpf" type="number" name="cpf" required>
+        <input matInput maxlength="11" pattern="[0-9]{11}" [(ngModel)]="user.cpf" type="number" id="cpf" name="cpf" required placeholder="Ex. 11111111111">
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>Telefone</mat-label>
-        <input matInput [(ngModel)]="user.phone" type="number" name="phone" required>
+        <input matInput pattern="[0-9]*" [(ngModel)]="user.phone" type="tel" id="phone" name="phone" required placeholder="Ex. 1599887766">
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>E-mail</mat-label>
-        <input matInput [(ngModel)]="user.email" type="text" name="email" required>
+        <input matInput pattern=".+@.+" [(ngModel)]="user.email" type="email" id="email" name="email" required placeholder="Ex. email@dominio.com.br">
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>CEP</mat-label>
-        <input matInput [(ngModel)]="user.cep" type="number" (keyup)="changeCep($event)" name="cep" required>
+        <input matInput pattern="[0-9]*" [(ngModel)]="user.cep" type="number" (keyup)="changeCep($event)" name="cep" required placeholder="Ex. 11111111">
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>Estado</mat-label>
-        <input matInput maxlength="2" [(ngModel)]="user.state" type="text" name="state" required>
+        <input matInput pattern="[a-zA-Z][a-zA-Z]" maxlength="2" [(ngModel)]="user.state" type="text" name="state" required placeholder="Ex. SP">
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>Cidade</mat-label>
-        <input matInput [(ngModel)]="user.city" type="text" name="city" required>
+        <input matInput [(ngModel)]="user.city" type="text" name="city" required placeholder="Ex. São Paulo">
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>Rua</mat-label>
-        <input matInput [(ngModel)]="user.street" type="text" name="street" required>
+        <input matInput [(ngModel)]="user.street" type="text" name="street" required placeholder="Ex. Rua nº7">
     </mat-form-field><br>
     <button mat-raised-button color="warn" (click)="formCancel()">Descartar alterações</button>
     <button mat-raised-button color="primary">Salvar alterações</button>
