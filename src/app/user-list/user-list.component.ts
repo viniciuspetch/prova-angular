@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material";
+import { ConfirmationDialogComponent } from "../confirmation-dialog/confirmation-dialog.component";
 
 @Component({
   selector: 'app-user-list',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 export class UserListComponent implements OnInit {
   users = []
 
-  constructor(private router: Router, public usersService: UsersService) {
+  constructor(private dialog: MatDialog, private router: Router, public usersService: UsersService) {
     this.users = usersService.users
   }
 
@@ -27,5 +29,23 @@ export class UserListComponent implements OnInit {
 
   searchUsers(event) {
     this.users = this.usersService.users.filter(user => user.name.toLowerCase().includes(event.target.value.toLowerCase()))
+  }
+
+  openConfirmDialog(currUser) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = {
+      message: "Você deseja mesmo deletar este usuário?",
+      btn1: "Sim, deletar usuário",
+      btn2: "Cancelar",
+    }
+    var dialogRef = this.dialog.open(ConfirmationDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+      data => {
+        if (data) {
+          this.deleteUser(currUser)
+        }
+      }
+    )
   }
 }
