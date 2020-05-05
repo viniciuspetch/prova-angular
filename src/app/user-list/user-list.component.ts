@@ -33,7 +33,6 @@ export class UserListComponent implements OnInit {
 
   openConfirmDialog(currUser) {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
     dialogConfig.data = {
       message: "Você deseja mesmo deletar este usuário?",
       btn1: "Sim, deletar usuário",

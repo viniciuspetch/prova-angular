@@ -1,3 +1,7 @@
-{{message}}
-<button matButton (click)="option1()">{{btn1}}</button>
-<button matButton (click)="option2()">{{btn2}}</button>
+<mat-dialog-content style="text-align: center">
+    {{message}}    
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="option1()">{{btn1}}</button>
+    <button mat-raised-button (click)="option2()">{{btn2}}</button>
+</mat-dialog-actions>

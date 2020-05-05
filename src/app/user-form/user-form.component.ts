@@ -48,7 +48,7 @@ export class UserFormComponent implements OnInit {
 
   openConfirmDialog() {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
+    dialogConfig.autoFocus = false;
     dialogConfig.data = {
       message: "Você deseja descartar as alterações?",
       btn1: "Descartar e voltar à lista de usuários",
