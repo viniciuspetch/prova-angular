@@ -18,7 +18,7 @@ export class UserListComponent implements OnInit {
 
   editUser(currUser) {
     this.usersService.currUser = currUser
-    this.router.navigate(['userform'])
+    this.router.navigate(['edituser'])
   }
 
   deleteUser(currUser) {

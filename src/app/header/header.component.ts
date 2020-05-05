@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(public router: Router, public usersService: UsersService) { }
+  ngOnInit() { }
+  newUser() {
+    console.log('newUser()')
+    this.usersService.resetCurrUser();
+    this.router.navigate(['newuser'])
   }
-
 }

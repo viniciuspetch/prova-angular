@@ -1,11 +1,11 @@
 <mat-toolbar>
     <h1 style="margin: 0 20px 0 0">
         CRUD
-    </h1>    
+    </h1>
     <button mat-button routerLink="/userlist">
         Lista de usuários
     </button>
-    <button mat-button routerLink="/userform">
+    <button mat-button (click)='newUser()'>
         Criar novo usuário
     </button>
     <button mat-button routerLink="/orig">

@@ -36,7 +36,7 @@ import { MatInputModule } from '@angular/material/input';
 		UserFormComponent
 	],
 	imports: [
-		RouterModule.forRoot([{ path: "", component: IndexComponent }, { path: 'orig', component: OrigComponent }, { path: 'userlist', component: UserListComponent }, { path: "userform", component: UserFormComponent }]),
+		RouterModule.forRoot([{ path: "", component: IndexComponent }, { path: 'orig', component: OrigComponent }, { path: 'userlist', component: UserListComponent }, { path: "edituser", component: UserFormComponent }, { path: "newuser", component: UserFormComponent }]),
 		BrowserModule,
 		BrowserAnimationsModule,
 		FormsModule,
