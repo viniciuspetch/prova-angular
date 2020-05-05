@@ -56,6 +56,10 @@ export class UsersService {
     return this.users.findIndex(listUser => Number(listUser.cpf) == Number(user.cpf))
   }
 
+  updateLocalStorage() {
+    localStorage.setItem("crud_users", JSON.stringify(this.users))
+  }
+
   saveUser(newUser) {
     var index = this.searchUser(newUser)
     if (index == -1) {
@@ -64,6 +68,7 @@ export class UsersService {
     else {
       this.users[index] = newUser
     }
+    this.updateLocalStorage()
   }
 
   deleteUser(user) {
@@ -71,9 +76,14 @@ export class UsersService {
     if (index != -1) {
       this.users.splice(index, 1)
     }
+    this.updateLocalStorage()
   }
 
   constructor() {
+    var stg = localStorage.getItem('crud_users')
+    if (stg) {
+      this.users = JSON.parse(stg)
+    }
     this.resetCurrUser()
   }
 }
