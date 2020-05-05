@@ -46,11 +46,13 @@ export class UserFormComponent implements OnInit {
     }
   }
 
-  openDialog() {
+  openConfirmDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
-      message: "Você deseja cancelar as alterações?"
+      message: "Você deseja descartar as alterações?",
+      btn1: "Descartar e voltar à lista de usuários",
+      btn2: 'Cancelar'
     }
     var dialogRef = this.dialog.open(ConfirmationDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(
