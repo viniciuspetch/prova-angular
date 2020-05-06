@@ -22,4 +22,8 @@ describe('UserFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have "Formulário de usuário" as title', () => {
+    expect(component.title).toEqual("Formulário de usuário");
+  });
 });

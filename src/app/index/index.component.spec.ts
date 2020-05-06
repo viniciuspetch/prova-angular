@@ -22,4 +22,8 @@ describe('IndexComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have "Página principal" as title', () => {
+    expect(component.title).toEqual("Página principal");
+  });
 });

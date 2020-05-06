@@ -23,4 +23,8 @@ describe('UserListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have "Lista de usuários" as title', () => {
+    expect(component.title).toEqual('Lista de usuários');
+  });
 });
