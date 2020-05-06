@@ -20,15 +20,20 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() { }
 
+  // Set chosen user to edit, redirects to the form
+  // Uses UsersService, UserFormComponent
   editUser(currUser) {
     this.usersService.currUser = currUser
     this.router.navigate(['edituser'])
   }
 
+  // Delete chosen user
+  // Uses UsersService
   deleteUser(currUser) {
     this.usersService.deleteUser(currUser)
   }
 
+  // Iteractive search, can select the search by name or by CPF
   searchUsers(event) {
     console.log(this.selected)
     if (this.selected == "cpf") {
@@ -40,6 +45,9 @@ export class UserListComponent implements OnInit {
 
   }
 
+  // Delete the current user
+  // Opens a dialog window to confirm action
+  // Uses ConfirmationDialogComponent
   openConfirmDialog(currUser) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {

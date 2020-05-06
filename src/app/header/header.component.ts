@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   constructor(public router: Router, public usersService: UsersService) { }
   ngOnInit() { }
+
+  // Sets the form to create a new user, redirects
+  // Uses UsersService
   newUser() {
     console.log('newUser()')
     this.usersService.resetCurrUser();

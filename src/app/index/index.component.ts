@@ -16,11 +16,16 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() { }
 
+  // Redirect to the form to create a new user
+  // Users UsersService
   newUser() {
     this.usersService.resetCurrUser();
     this.router.navigate(['newuser'])
   }
 
+  // Deletes all users and re-add the default ones
+  // Open a dialog window to confirm action
+  // Uses UsersService, ConfirmationDialogComponent
   resetButton() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = false;
@@ -39,6 +44,9 @@ export class IndexComponent implements OnInit {
     )    
   }
 
+  // Deletes all users
+  // Opens a dialog window to confirm action
+  // Uses UsersService, ConfirmationDialogComponent
   deleteButton() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = false;

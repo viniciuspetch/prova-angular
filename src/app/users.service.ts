@@ -7,6 +7,7 @@ export class UsersService {
   currUser
   users = []
 
+  // Set the user list to default, save in localStorage
   resetLocalStorage() {
     this.users = [
       {
@@ -53,15 +54,18 @@ export class UsersService {
     this.saveLocalStorage()
   }
 
+  // Set user list as empty, save in localStorage
   deleteLocalStorage() {
     this.users = []
     this.saveLocalStorage()
   }
 
+  // Save current user list in localStorage
   saveLocalStorage() {
     localStorage.setItem("crud_users", JSON.stringify(this.users))
   }
 
+  // Load user list from localStorage, set and save default user list if there's no data
   loadLocalStorage() {
     var stg = localStorage.getItem('crud_users')
     // Local content exists, use it
@@ -74,14 +78,17 @@ export class UsersService {
     }
   }
 
+  // Reset current user, used to pass data to form
   resetCurrUser() {
     this.currUser = { name: "", cpf: "", phone: "", email: "", cep: "", state: "", city: "", street: "" }
   }
 
+  // Search for an user on the user list, return its index
   searchUser(user) {
     return this.users.findIndex(listUser => Number(listUser.cpf) == Number(user.cpf))
   }
 
+  // Save user data if already exists, create new user otherwise
   saveUser(newUser) {
     var index = this.searchUser(newUser)
     if (index == -1) {
@@ -93,6 +100,7 @@ export class UsersService {
     this.saveLocalStorage()
   }
 
+  // Delete user
   deleteUser(user) {
     var index = this.searchUser(user)
     if (index != -1) {

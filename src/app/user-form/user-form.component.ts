@@ -19,11 +19,15 @@ export class UserFormComponent implements OnInit {
     this.user = { ...this.usersService.currUser }
   }
 
+  // Submit user form to create/update user
+  // Uses UsersService
   formSubmit() {
     this.usersService.saveUser(this.user);
     this.router.navigate(['userlist'])
   }
 
+  // Get city, state and street using CEP via an API
+  // API connection is made via CepService
   changeCep(event) {
     console.log("changeCep")
     var cep = event.target.value
@@ -47,6 +51,9 @@ export class UserFormComponent implements OnInit {
     }
   }
 
+  // Discard current data
+  // Opens a dialog window to confirm action
+  // Uses ConfirmationDialogComponent
   openConfirmDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = false;

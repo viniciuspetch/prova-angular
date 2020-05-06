@@ -21,10 +21,12 @@ export class ConfirmationDialogComponent implements OnInit {
 
   ngOnInit() { }
 
+  // Return true if the first option is chosen
   option1() {
     this.dialogRef.close(true)
   }
 
+  // Return false if the second option is chosen
   option2() {
     this.dialogRef.close(false)
   }
