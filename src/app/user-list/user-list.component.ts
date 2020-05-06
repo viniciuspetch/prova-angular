@@ -35,8 +35,8 @@ export class UserListComponent implements OnInit {
   openConfirmDialog(currUser) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
-      message: "Você deseja mesmo deletar este usuário?",
-      btn1: "Sim, deletar usuário",
+      message: "Você deseja mesmo remover este usuário?",
+      btn1: "Sim, remover usuário",
       btn2: "Cancelar",
     }
     var dialogRef = this.dialog.open(ConfirmationDialogComponent, dialogConfig);
