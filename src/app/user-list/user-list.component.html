@@ -1,8 +1,14 @@
 <div class="mat-display-1">
     {{title}}
 </div>
-<mat-form-field appearance="outline">
-    <mat-label>Buscar por nome</mat-label>
+<mat-form-field id="searchSelect" appearance="outline">
+    <mat-select [(value)]="selected">
+        <mat-option value="name">Buscar por nome</mat-option>
+        <mat-option value="cpf">Buscar por CPF</mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field id="searchInput" appearance="outline">
+    <mat-label>Digite aqui para iniciar a busca</mat-label>
     <input matInput (keyup)="searchUsers($event)">
 </mat-form-field>
 <mat-card class="user-card" *ngFor="let user of users">

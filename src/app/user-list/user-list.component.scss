@@ -15,10 +15,16 @@
   margin: 0 0 0 20px;
 }
 
-mat-form-field {
+#searchInput {
   margin: 20px 20px 0 20px;
   padding: 0;
   width: 400px;
+}
+
+#searchSelect {
+  margin: 20px 20px 0 20px;
+  padding: 0;
+  width: 200px;
 }
 
 .mat-display-1 {

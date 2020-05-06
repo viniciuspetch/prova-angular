@@ -26,6 +26,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table'
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from "@angular/material";
+import { MatSelectModule } from '@angular/material/select';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
 		MatDividerModule,
 		MatListModule,
 		MatFormFieldModule,
-		MatDialogModule
+		MatDialogModule,
+		MatSelectModule
 	],
 	providers: [CepService],
 	bootstrap: [AppComponent],

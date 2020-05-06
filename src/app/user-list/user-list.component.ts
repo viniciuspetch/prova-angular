@@ -12,6 +12,7 @@ import { ConfirmationDialogComponent } from "../confirmation-dialog/confirmation
 export class UserListComponent implements OnInit {
   users = []
   title = "Lista de usuários"
+  selected = 'name'
 
   constructor(private dialog: MatDialog, private router: Router, public usersService: UsersService) {
     this.users = usersService.users
@@ -29,7 +30,14 @@ export class UserListComponent implements OnInit {
   }
 
   searchUsers(event) {
-    this.users = this.usersService.users.filter(user => user.name.toLowerCase().includes(event.target.value.toLowerCase()))
+    console.log(this.selected)
+    if (this.selected == "cpf") {
+      this.users = this.usersService.users.filter(user => user.cpf.toString().includes(event.target.value))
+    }
+    else {
+      this.users = this.usersService.users.filter(user => user.name.toLowerCase().includes(event.target.value.toLowerCase()))
+    }
+
   }
 
   openConfirmDialog(currUser) {
