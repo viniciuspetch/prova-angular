@@ -12,3 +12,7 @@ Trata-se de um teste bem simples, onde temos um CRUD de usuários e queremos vê
 ## Como será feita a entrega?
 
 Deverá ser realizado um fork deste repositório e no e-mail enviado você deverá responder com o link deste fork.
+
+## Hosting
+
+Este projeto está sendo hosteado no Heroku: https://agile-eyrie-55874.herokuapp.com/
