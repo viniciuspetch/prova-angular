@@ -15,8 +15,15 @@ export class IndexComponent implements OnInit {
   ngOnInit() { }
 
   newUser() {
-    console.log('newUser()')
     this.usersService.resetCurrUser();
     this.router.navigate(['newuser'])
+  }
+
+  resetButton() {
+    this.usersService.resetLocalStorage();
+  }
+
+  deleteButton() {
+    this.usersService.deleteLocalStorage();
   }
 }
