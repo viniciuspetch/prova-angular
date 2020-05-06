@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -8,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class IndexComponent implements OnInit {
   title = "Página principal"
 
-  constructor() { }
+  constructor(public router: Router, public usersService: UsersService) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  newUser() {
+    console.log('newUser()')
+    this.usersService.resetCurrUser();
+    this.router.navigate(['newuser'])
   }
-
 }
