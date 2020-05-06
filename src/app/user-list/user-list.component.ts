@@ -11,6 +11,7 @@ import { ConfirmationDialogComponent } from "../confirmation-dialog/confirmation
 })
 export class UserListComponent implements OnInit {
   users = []
+  title = "Lista de usuários"
 
   constructor(private dialog: MatDialog, private router: Router, public usersService: UsersService) {
     this.users = usersService.users

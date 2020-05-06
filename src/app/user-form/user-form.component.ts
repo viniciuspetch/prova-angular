@@ -12,6 +12,7 @@ import { ConfirmationDialogComponent } from "../confirmation-dialog/confirmation
 })
 export class UserFormComponent implements OnInit {
   user
+  title = "Formulário de usuário"
   constructor(private dialog: MatDialog, private router: Router, public cep: CepService, public usersService: UsersService) { }
 
   ngOnInit() {
