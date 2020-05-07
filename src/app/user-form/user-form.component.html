@@ -10,14 +10,11 @@
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>CPF (Sem traços ou pontos)</mat-label>
-        <input matInput maxlength="11" pattern="[0-9]{11}" [(ngModel)]="user.cpf" type="number" id="cpf" name="cpf" #cpf="ngModel" required placeholder="Ex. 11111111111">
-        <div *ngIf="cpf.invalid && (cpf.dirty || cpf.touched)">
-            <mat-error *ngIf="cpf.errors.required">Apenas números</mat-error>
-        </div>
+        <input matInput maxlength="11" pattern="[0-9]{11}" [(ngModel)]="user.cpf" type="text" id="cpf" name="cpf" #cpf="ngModel" required placeholder="Ex. 11111111111">
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>Telefone</mat-label>
-        <input matInput pattern="[0-9]*" [(ngModel)]="user.phone" type="tel" id="phone" name="phone" #phone="ngModel" required placeholder="Ex. 1599887766">
+        <input matInput pattern="[0-9]*" [(ngModel)]="user.phone" type="text" id="phone" name="phone" #phone="ngModel" required placeholder="Ex. 1599887766">
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>E-mail</mat-label>
@@ -25,10 +22,7 @@
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>CEP (Sem traços)</mat-label>
-        <input matInput pattern="[0-9]*" [(ngModel)]="user.cep" type="number" (keyup)="changeCep($event)" #cep="ngModel" name="cep" required placeholder="Ex. 11111111">
-        <div *ngIf="cep.invalid && (cep.dirty || cep.touched)">
-            <mat-error *ngIf="cep.errors.required">Apenas números</mat-error>
-        </div>
+        <input matInput pattern="[0-9]*" [(ngModel)]="user.cep" type="text" (keyup)="changeCep($event)" #cep="ngModel" name="cep" required placeholder="Ex. 11111111">
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>Estado (Sigla)</mat-label>
