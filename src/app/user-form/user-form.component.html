@@ -14,7 +14,7 @@
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>Telefone</mat-label>
-        <input matInput pattern="[0-9]*" [(ngModel)]="user.phone" type="text" id="phone" name="phone" #phone="ngModel" required placeholder="Ex. 1599887766">
+        <input matInput minlength="8" pattern="[0-9]*" [(ngModel)]="user.phone" type="text" id="phone" name="phone" #phone="ngModel" required placeholder="Ex. 1599887766">
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>E-mail</mat-label>
@@ -22,7 +22,7 @@
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>CEP (Sem traços)</mat-label>
-        <input matInput pattern="[0-9]*" [(ngModel)]="user.cep" type="text" (keyup)="changeCep($event)" #cep="ngModel" name="cep" required placeholder="Ex. 11111111">
+        <input matInput pattern="[0-9]{8}" [(ngModel)]="user.cep" type="text" (keyup)="changeCep($event)" #cep="ngModel" name="cep" required placeholder="Ex. 11111111">
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>Estado (Sigla)</mat-label>
