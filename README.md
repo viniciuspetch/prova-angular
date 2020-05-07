@@ -1,18 +1,14 @@
 # Prova de Angular
 
-Trata-se de um teste bem simples, onde temos um CRUD de usuários e queremos vê-lo funcional, organizado e com testes
+## O que foi feito
 
-## O que será avaliado?
-
-1. Qualidade do seu código
-2. Boas práticas utilizadas
-3. Conceitos de DRY
-4. Prazo
-
-## Como será feita a entrega?
-
-Deverá ser realizado um fork deste repositório e no e-mail enviado você deverá responder com o link deste fork.
-
-## Hosting
-
-Este projeto está sendo hosteado no Heroku: https://agile-eyrie-55874.herokuapp.com/
+- Implementação do Angular Material
+- Criação de 2 componentes, sendo uma lista e um formulário, para servir de UI para as operações CRUD
+- Criação de componentes para a página principal, header e footer
+- Criação de um componente utilizado para caixas de diálogo/modais
+- Todas as operações feitas sobre a lista de usuárias são realizadas a partir de um service
+- Validação especial para alguns campos do formulário (CPF, telefone, e-mail, CEP, estado)
+- Busca dinâmica, podendo escolher entre buscar por nome ou por CPF
+- Botões de debug para deletar todos os usuários ou resetar a lista
+- Implementação de testes
+- Hosting no Heroku (https://agile-eyrie-55874.herokuapp.com/)
